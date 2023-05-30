@@ -1,0 +1,419 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+
+:root{
+--Bright-Blue: hsl(220, 98%, 61%);
+--Check-Background-lg-from: hsl(192, 100%, 67%);
+--Check-Background-lg-to:hsl(280, 87%, 65%);
+
+/* Light Theme */
+
+--Very-Light-Gray: hsl(0, 0%, 98%);
+--Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
+--Light-Grayish-Blue-Light: hsl(233, 11%, 84%);
+--Dark-Grayish-Blue: hsl(236, 9%, 61%);
+--Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
+
+/* Dark Theme */
+
+--Very-Dark-Blue: hsl(235, 21%, 11%);
+--Very-Dark-Desaturated-Blue: hsl(235, 24%, 19%);
+--Light-Grayish-Blue-Dark: hsl(234, 39%, 85%);
+--Dark-Grayish-Blue: hsl(234, 11%, 52%);
+--Very-Dark-Grayish-Blue: hsl(233, 14%, 35%);
+--Very-Very-Dark-Grayish-Blue: hsl(240, 9%, 13%);
+
+}
+
+html{
+    font-size: 62.5%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+ul{
+    list-style: none;
+}
+
+.switch{
+    --Very-Dark-Blue: hsl(0, 0%, 98%);
+    --Very-Dark-Desaturated-Blue: hsl(0, 0%, 98%);
+    --Very-Light-Gray: hsl(235, 21%, 11%);
+    --Very-Very-Dark-Grayish-Blue: hsl(236, 33%, 92%);
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--Very-Dark-Blue);
+}
+
+.head-wrapper{
+    height: 20rem;
+    background: url('./images/bg-mobile-dark.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+}
+
+.head-src{
+    height: 20rem;
+    background: url('./images/bg-mobile-light.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 4rem 2rem;
+}
+
+.head-box{
+    max-width: 86rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+}
+
+.logo{
+    color: hsl(0, 0%, 98%);
+    font-size: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.icon-toggler{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    background: url('./images/icon-sun.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.icon-switch{
+    width: 2.5rem;
+    height: 2.5rem;
+    border: none;
+    outline: none;
+    background: url('./images/icon-moon.svg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    cursor: pointer;
+}
+
+.input-field{
+    max-width: 86rem;
+    margin: auto;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.check-new-todo,
+.check-todo{
+    width: 2rem;
+    height: 2rem;
+    appearance: none;
+    border: 1px solid var(--Dark-Grayish-Blue);
+    border-radius: 50%;
+    transform: translateX(2rem);
+    display: grid;
+    place-items: center;
+    position: relative;
+    cursor: pointer;
+}
+
+.check-new-todo::before,
+.check-todo::before{
+    content: '';
+    position: absolute;
+    display: none;
+    width: 2rem;
+    height: 2rem;
+    background: url('./images/icon-check.svg'), linear-gradient(132deg, var(--Check-Background-lg-from), var(--Check-Background-lg-to));
+    background-position: center, center;
+    background-size: 50% 50%, cover;
+    background-repeat: no-repeat, no-repeat;
+    border-radius: 50%;
+}
+
+.check-new-todo:checked::before,
+.check-todo:checked::before{
+    display: block;
+}
+
+.new-todo{
+    display: block;
+    width: 100%;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    padding:2rem;
+    padding-left: 3rem;
+    border: none;
+    outline: none;
+    color: var(--Very-Light-Gray);
+    font-size: 1.8rem;
+    font-weight: bold;
+    border-radius: .5rem;
+    caret-color: var(--Bright-Blue);
+}
+
+.todos-wrapper{
+    max-width: 90rem;
+    margin: auto;
+    padding: 0 2rem 4rem;
+}
+
+.todos-list{
+    border-radius: .5rem;
+    overflow: hidden;
+    transform: translateY(-2rem);
+    box-shadow: 5px 5px 20px var(--Very-Very-Dark-Grayish-Blue);
+}
+
+.todo{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--Very-Dark-Desaturated-Blue);
+    padding:1.5rem;
+    border-bottom: .2px solid var(--Very-Dark-Grayish-Blue);
+    cursor: pointer;
+}
+
+.todo > div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.check-todo{
+    transform: none;
+}
+
+.todo-msg{
+    font-size: 1.8rem;
+    color:var(--Dark-Grayish-Blue);
+}
+
+.todo-msg::first-letter{
+    text-transform: uppercase;
+}
+
+.local-todo-msg{
+    color: var(--Dark-Grayish-Blue);
+    text-decoration: line-through;
+}
+
+.remove-todo{
+    cursor: pointer;
+    opacity: 0;
+}
+
+.mobile-only{
+    border: none;
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+}
+
+.left-items-para,
+.desktop-left-items{
+    font-size: 1.8rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+.btn{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
+    color: var(--Dark-Grayish-Blue);
+    cursor: pointer;
+}
+
+.todo-btns{
+    justify-content: center;
+    gap: 3rem;
+    margin-top: 2rem;
+    border-radius: .5rem;
+    border: none;
+    cursor: auto;
+}
+
+.all-btn, .active, .completed{
+    font-weight: bold;
+}
+
+.all-btn{
+    color: var(--Bright-Blue);
+}
+
+.desktop-only{
+    display: none;
+}
+
+.todo-instruction{
+    text-align: center;
+    font-size: 1.8rem;
+    margin-top: 3rem;
+    color: var(--Dark-Grayish-Blue);
+}
+
+/* ------FOOTER -------- */
+
+footer{
+    transform: translateY(5rem);
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.attribution{
+    color: var(--Dark-Grayish-Blue);
+    font-size: 1.8rem;
+    line-height: 2rem;
+}
+
+.attribution > a{
+    color: var(--Bright-Blue);
+    text-decoration: none;
+}
+
+@media screen and (min-width:768px) {
+    .head-wrapper,
+    .head-src{
+        height: 25rem;
+    }
+
+    .head-wrapper{
+        background: url('./images/bg-desktop-dark.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .head-src{
+        background: url('./images/bg-desktop-light.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .todos-list{
+        transform: translateY(-4.5rem);
+    }
+    
+    .mobile-only{
+        display: none !important;
+    }
+
+    .left-items-para > .left-items{
+        transform: scale(0);
+    }
+    .desktop-only{
+        display: block;
+    }
+
+    .desktop-left-items > .left-items{
+        display: inline-block;
+    }
+
+    .todo-btns{
+        margin: 0;
+        position: relative;
+    }
+
+    .desktop-left-items{
+        position: absolute;
+        top: 50%;
+        left: 3rem;
+        transform: translateY(-50%);
+    }
+
+    .d-clear-completed-todo{
+        position: absolute;
+        top: 50%;
+        right: 3rem;
+        transform: translateY(-50%);
+    }
+}
+
+
+@media(hover:hover){
+    .todo:hover .todo-msg{
+        color: var(--Very-Light-Gray);
+    }
+
+    .completed-task:hover .todo-msg{
+        color: var(--Dark-Grayish-Blue);
+    }
+
+    .check-todo:hover{
+        border-color: var(--Bright-Blue);
+    }
+
+    .btn:hover{
+        color: var(--Very-Light-Gray) !important;
+    }
+
+    .todo:hover .remove-todo{
+        opacity: 1;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

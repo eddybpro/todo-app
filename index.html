@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Todo app</title>
+
+  <!-- --CSS LINK ---- -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main>
+    <div class="head-wrapper">
+      <div class="head-box">
+        <h1 class="logo">todo</h1>
+        <button class="icon-toggler"></button>
+      </div>
+      <div class="input-field">
+        <input type="checkbox"  class="check-new-todo" name="check-new todo" >
+        <input type="text" class="new-todo" placeholder="Create a new todo..."
+        name="new-todo" disabled>
+      </div>
+    </div>
+    <div class="todos-wrapper">
+      <ul class="todos-list">
+        <li class="mobile-only todo">
+          <p class="left-items-para">
+            <span class="left-items">0</span>
+            items left
+          </p>
+          <button class="clear-completed-todo btn">
+            Clear Completed
+          </button>
+        </li>
+        <li class="todo-btns todo">
+          <p class="desktop-only desktop-left-items">
+            <span class="d-left-items">0</span>
+            items left
+          </p>
+          <button class="all-btn btn">All</button>
+          <button class="active btn">Active</button>
+          <button class="completed btn">Completed</button>
+          <button class="desktop-only d-clear-completed-todo btn">
+            Clear Completed
+          </button>
+        </li>
+      </ul>
+      <p class="todo-instruction">
+        Drag and drop to reorder list
+      </p>
+    </div>
+  </main>
+
+<!-- ---- FOOTER --- -->
+
+<footer>
+  <p class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" rel="noopener noreferrer">Frontend Mentor</a>. 
+    Coded by <a href="https://github.com/eddybpro">Eddybpro</a>.
+  </p>
+</footer>
+  <script src="script.js"></script>
+</body>
+</html>
